@@ -1,0 +1,48 @@
+fcfs discussion
+FCFS (First-Come, First-Served) is a scheduling algorithm that schedules processes in the order they arrive in the queue. 
+It is the simplest scheduling algorithm, where the process that arrives first is executed first, and so on. 
+It doesn't take into account the priority of processes or the amount of time they need to complete, 
+so it may result in long waiting times for processes that arrive later in the queue. 
+However, it has the advantage of being easy to understand and implement.
+
+sjf discussion
+SJF (Shortest Job First) is a scheduling algorithm that schedules processes based on their estimated run time. 
+The idea behind this algorithm is to give priority to shorter processes so that the overall waiting time is minimized. 
+SJF can be implemented in two ways: Non-Preemptive SJF and Preemptive SJF.
+
+In Non-Preemptive SJF, once a process starts executing, it continues until it finishes, 
+and no other process can be executed until it finishes.
+
+In Preemptive SJF, the scheduler selects the process with the shortest run time to execute, 
+but if a new process arrives with a shorter run time, 
+the current process can be preempted (interrupted) and the new process is executed.
+
+SJF is considered to be an optimal algorithm in terms of average waiting time, 
+but it has the disadvantage of requiring knowledge of the run time of all processes beforehand, 
+which is often not possible.
+
+srtf discussion 
+SRTF (Shortest Remaining Time First) is a scheduling algorithm that is similar to SJF (Shortest Job First) but with one key difference: 
+it considers the remaining run time of a process, not just the estimated run time.
+
+In SRTF, when a process arrives or a running process is preempted, 
+the scheduler selects the process with the shortest remaining run time to execute next. 
+This algorithm is considered to be a preemptive version of SJF.
+
+The advantage of SRTF over SJF is that it accounts for changes in the run time of processes, 
+making it a more dynamic algorithm. However, like SJF, it requires the accurate prediction of the run time of processes, 
+which is not always possible. Additionally, implementing SRTF requires a constant monitoring of the remaining run time of all processes, 
+making it more complex to implement than other scheduling algorithms.
+
+round robin discussion 
+Round Robin is a scheduling algorithm used in computer operating systems to distribute CPU resources fairly among processes. 
+It operates by dividing the available CPU time into equal time slices, called quantum, and allocating them to each process in a circular order.
+
+When a process is given the CPU, it runs for a time slice of the quantum. If it finishes executing before the time slice expires, 
+the CPU is then given to the next process in the queue. If the process has not finished executing by the end of the time slice, 
+it is preempted and placed at the end of the queue to be executed again later.
+
+Round Robin provides a fair distribution of CPU time to all processes, 
+avoiding the starvation of processes and ensuring a good response time for interactive processes. The length of the time slice, or quantum, 
+affects the performance of the algorithm, with a smaller quantum leading to a more responsive system but a higher overhead, 
+and a larger quantum leading to a more efficient system but a less responsive one.
